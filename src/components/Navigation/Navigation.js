@@ -1,15 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import {selectAuth} from 'redux/auth/selectors'
+import { useAuth } from 'hooks/useAuth/useAuth';
 import Button from '@mui/material/Button';
 import { StyledLink } from "./Navigation.styled";
 
 export const Navigation = ()=> {
-    const {isLoggedIn} = useSelector(selectAuth);
+    const { isLoggedIn } = useAuth();
 
     return (
       <nav>
-        <Button variant="contained" >
+        <Button variant="contained">
           <StyledLink to="/">Home</StyledLink>
         </Button>
 

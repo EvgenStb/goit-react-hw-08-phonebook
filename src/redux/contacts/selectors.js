@@ -22,13 +22,9 @@ export const selectFilteredContacts = state => {
 export const selectSortedContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
-    let filteredContact = contacts.items;
-    if (filter !== '') {
-      const normalizedFilter = filter.toLowerCase();
-      filteredContact = filteredContact.filter(contact =>
-        contact.name.toLowerCase().includes(normalizedFilter)
-      );
-    }
-    return [...filteredContact].sort((a, b) => a.name.localeCompare(b.name));
+    
+    return (contacts.items.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase())
+      ).sort((a, b) => a.name.localeCompare(b.name)));
   }
 );

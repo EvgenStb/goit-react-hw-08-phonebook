@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectAuth } from "redux/auth/selectors";
+import { useAuth } from 'hooks/useAuth/useAuth';
 import Button from '@mui/material/Button';
 import { HomeStyled } from "pages/Home.styled";
 
 const Home = () => {
-    const {isLoggedIn} = useSelector(selectAuth)
+    const { isLoggedIn } = useAuth();
     const navigate = useNavigate();
 
     return (

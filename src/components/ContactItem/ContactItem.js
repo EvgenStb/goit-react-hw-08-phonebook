@@ -1,4 +1,4 @@
-import Notiflix from "notiflix";
+// import Notiflix from "notiflix";
 // import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { deleteContact } from "redux/contacts/operations";
@@ -16,7 +16,6 @@ const dispatch = useDispatch()
 
 const handleDelete = (id) => {
     dispatch(deleteContact(id));
-    return Notiflix.Notify.success('Contact deleted successfully')
 }
 
     return (

@@ -7,7 +7,6 @@ import ContactList from "components/ContactList/ContactList";
 import Filter from 'components/Filter/Filter'
 import { fetchContacts } from "redux/contacts/operations";
 import { selectIsLoading,selectError } from "redux/contacts/selectors";
-import { selectToken } from "redux/auth/selectors";
 import { ContactsContainer } from "./Contact.styled";
 
 
@@ -15,13 +14,10 @@ const Contacts = () => {
     const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
     const dispatch = useDispatch();
-    const token = useSelector(selectToken);
 
     useEffect(() => {
-        if (token) {
             dispatch(fetchContacts());
-        }
-    }, [dispatch, token])
+    }, [dispatch])
 
     return (
       <HelmetProvider>
