@@ -1,4 +1,3 @@
-import Notiflix from "notiflix";
 
 export const handlePending = state => {
   state.isLoading = true;
@@ -20,7 +19,6 @@ export const handleFulfilledFetch = (state, action) => {
 };
 
 export const handleFulfilledAdd = (state, action) => {
-  Notiflix.Notify.success(`Contact added successfully`);
   handleFulfilled(state);
   state.items.push(action.payload);
 };
